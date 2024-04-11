@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Manual - MyTutorApp</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            margin: 20px;
+            padding: 0;
+            color: white;
+            background-color:darkseagreen;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 8px;
+            text-decoration: underline;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+            text-align:center;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .subsection {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        ol {
+            counter-reset: item;
+        }
+
+        li {
+            display: block;
+            color: black;
+        }
+
+        li:before {
+            content: counters(item, ".") " ";
+            counter-increment: item;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>User Manual - MyTutorApp</h1>
+    </header>
+     <!--the change to commita-->
+
+    <section class="section">
+        <h2>Table of Contents</h2>
+        <ol>
+            <li><a href="#section1">About MyTutorApp</a></li>
+            <li><a href="#section2">Register a new account</a></li>
+            <li><a href="#section3">Login</a></li>
+            <li><a href="#section4">Tutor & TA Registration</a></li>
+            <li><a href="#section5">Tutor & TA Applications</a></li>
+            <li><a href="#section6">Checking Application Status & Uploading Documents</a>
+                <ol>
+                    <li><a href="#subsection1">Check Application</a></li>
+                    <li><a href="#subsection2">Uploading Documents</a></li>
+                    <li><a href="#subsection3">Register</a></li>
+                </ol>
+            </li>
+            <li><a href="#section7">Navigating Tutor Homepage</a></li>
+            <li><a href="#section8">Navigating TA Homepage</a></li>
+            <li><a href="#section9">Navigating Admin Homepage</a></li>
+            <li><a href="#section10">Managing Courses</a></li>
+        </ol>
+    </section>
+
+    <section class="section" id="section1">
+        <h3>Welcome to MyTutor</h3>
+        <p>MyTutor is a web tutor management system designed to automate tutor/TA selection, allocation, monitoring and scheduling. 
+            It houses websites for academic courses, which are tailored for each user. 
+            If you are a UCT staff member or registered student, you can access the application by logging in using your username and password. 
+            Administrators can create new course sites that can be used for viewing the tutor course schedule as well as creating or signing up for tutor activities. 
+            Getting started is easy, simply follow the instructions below and start exploring the system. </p>
+    </section>
+    <div>
+        <h4>How to get started with MyTutor</h4>
+    </div>
+
+    <section class="section" id="section2">
+        <h5>Register a new account (if you're a Tutor or TA)</h5>
+        <p>1. Open your internet browser and type http://196.47.239.204:8080/login into the address bar.</p> 
+        <p>2. Click on the register button.</p>
+        <p>3. Choose the role (tutor/TA) and enter the required details and click on ‘sign me up’.</p>
+        <p>4. Enter the OTP number sent to the email address you provided and click on ‘submit’.</p>
+        <p>5. You’ll be redirect to the login page where you can login using your username and password.</p>
+            
+    </section>
+
+    <section class="section" id="section3">
+        <h6>Login</h6>
+        <p>1. Open your internet browser and type http://196.47.239.204:8080/login into the address bar.</p> 
+        <p>2. Enter your username and password in the respective input boxes.</p>
+        <p>3. Click login.</p>
+        <h7>If you cant login</h7>
+        <p>1. Click on the forgot password tag that can be found below the login button.</p> 
+        <p>2. Enter your email and click on submit.</p>
+        <p>3. Enter the OTP number sent to the email you provided.</p> 
+        <p>4. Enter your new password and confirm it.</p>
+        <p>5. Click on submit.</p>
+        <p>6. You’ll be redirected back to the login page where you can login using your new password.</p>       
+
+
+    </section>
+
+    <section class="section" id="section4">
+        <h7>Tutor & TA Registration</h7>
+        <p></p>
+    </section>
+
+    <section class="section" id="section5">
+        <h2>Tutor & TA Applications</h2>
+        <p></p>
+    </section>
+
+    <section class="section" id="section6">
+        <h2>Checking Application Status & Uploading Documents</h2>
+        <p></p>
+        <section class="subsection" id="subsection1">
+            <h3>Checking Application</h3>
+            <p></p>
+        </section>
+        <section class="subsection" id="subsection2">
+            <h3>Uploading Documents</h3>
+            <p></p>
+        </section>
+        <section class="subsection" id="subsection3">
+            <h3>Register</h3>
+            <p></p>
+        </section>
+
+    </section>
+
+    <section class="section" id="section7">
+        <h2>Navigating Tutor Homepage</h2>
+        <p></p>
+    </section>
+
+    <section class="section" id="section8">
+        <h2>Navigating TA Homepage</h2>
+        <p></p>
+    </section>
+
+    <section class="section" id="section9">
+        <h2>Navigating Admin Homepage</h2>
+        <p></p>
+    </section>
+
+    <section class="section" id="section10">
+        <h2>Managing Courses</h2>
+        <p></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 UCT</p>
+    </footer>
+</body>
+
+</html>

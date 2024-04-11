@@ -1,0 +1,138 @@
+.heading-important{
+    text-align: center;
+    color:lightblue;
+    font-size:30px;
+    border: solid lightblue;
+    padding: 0px 20px 10px;
+    width: 100%;
+
+}
+.view{
+    margin-left: 20%;
+    margin-top: 20px;
+}
+input{
+    border: solid 3px;
+}
+
+.view-btn{
+    border-radius: 5px;
+    background-color: #16a085;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.btn-group button{
+    background-color: #16a085;
+    border-radius: 20px;
+    font-size: 20px;
+    border: solid 2px;
+    color:white;
+    cursor: pointer;
+    width: 20%;
+}
+.btn-group button:hover, .view-btn:hover{
+    background-color: #16A805;
+}
+
+.info{
+    margin: 5%;
+    margin-left: 15%;
+}
+
+label{
+    font-size: 15px;
+    width: 150px;
+}
+#roleSelect{
+    border: solid 3px;
+}
+.group{
+    margin-bottom: 12px;
+}
+.manage-user{
+    margin-left: 20%;
+}
+.manage-div{
+    margin: 10px;
+}
+.showuser{
+    margin-left: 20%;
+}
+.spring-Messages{
+    text-align: center;
+}
+.error{
+    color:red;
+}
+.result{
+    color:blue;
+    font-size: 20px;
+    font-weight: 700px;
+}
+/*for course*/
+.course-important{
+    text-align: center;
+    color:lightblue;
+    font-size:30px;
+    border: solid lightblue;
+    padding: 0px 20px 10px;
+    width: 100%;
+}
+.controls{
+   margin-left: 15%;
+}
+.controls button{
+    border-radius: 5px;
+    background-color: #16a085;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    margin: 4px 2px 20px;
+    cursor: pointer;
+}
+.create{
+    margin-left: 15%;
+}
+.btn{
+    border-radius: 5px;
+    background-color: #16a085;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.resultMessage
+{
+    margin-left: 10%;
+}
+.description-area{
+    border: solid 2px;
+    width:300px;
+    height: 100px;
+}
+.course-manage{
+    margin:10px;
+}
+.form-text{
+    border: solid 2px;
+    height: 30px;
+    width: 250px;
+}
+.course
+{
+    display: block;
+}
+/*viewApplicant*/

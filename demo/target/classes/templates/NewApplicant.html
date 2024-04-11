@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>New Application</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/viewApplicants.css}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script th:src="@{/javascript/topnavscript.js}"></script>
+    <script>
+        /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</head>
+
+<body>
+           
+    <div>
+        <pre th:text="${result}"></pre>
+    </div>
+    <div th:if="${showForm}">
+        <h3 th:text="${postIdentifier}">Post Name</h3>
+        <pre th:text="${postDescription}">Post Description</pre>
+    </div>
+    <div th:if="${showForm}">
+        <form th:action="@{/newApplicant}" th:object="${applicant}" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" th:field="*{firstName}" placeholder="Your Name" />
+            </div>
+            <div>
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" th:field="*{lastName}" placeholder="Your Last Name" />
+            </div>
+            <div>
+                <label for="username">Student Number:</label>
+                <input type="text" id="username" th:field="*{username}" placeholder="eg. ABCXYZ001" />
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" id="email" th:field="*{emailAddress}" placeholder="eg. ABCXYZ001@myuct.ac.za" />
+            </div>
+            <div>
+                <label for="contactNumber">Contact Number:</label>
+                <input type="number" id="contactNumber" th:field="*{contactNumber}" placeholder="eg. 0712345678" />
+            </div>
+            <div>
+                <label for="studyLevel">Level of study:</label>
+                <select th:field="*{studyLevel}" id="studyLevel" name="studyLevel"
+                    title="Select your level of study" required>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="postgraduate">Postgraduate</option>
+                </select>
+            </div>
+            <div>
+                <label for="yearOfStudy">Year of Study</label>
+                <input type="number" id="yearOfStudy" th:field="*{yearOfStudy}" placeholder="eg. 1" />
+            </div>
+            <div>
+                <label for="qualifications">Applicant Qualifications</label>
+                <input type="text" id="qualifications" th:field="*{qualifications}"
+                    placeholder="Put N/A if undergraduate" />
+            </div>
+            <div>
+                <label for = "Course">Course:</label>
+                <input class = "course-class" type="text" id = "course">
+                <label for = "mark">Mark:</label>
+                <input type="number" class = "mark-class" id ="mark">
+                <input type="hidden" id="courses" name="courses">
+                <button type="button" id="addCourse" onClick="add()">Add</button>
+            </div>
+            <div id= "display1" class="js-todo-display todo-display"></div>
+            <!--<div>
+                <label for="courses">Completed Course:</label>
+                <input type="text" id="courses" name="courses" placeholder="CSC1015F-75, CSC1016S-80" />
+            </div>-->
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+<script>
+    let arrayList =[];
+    //const axios = require('axios');
+    function add()
+    {
+        const courseElement = document.querySelector(".course-class");
+        const course = courseElement.value;
+        const markElement = document.querySelector(".mark-class");
+        const mark = markElement.value;
+        arrayList.push({course,mark});
+        console.log(arrayList);
+        display();
+
+    }
+    function display()
+    {
+        var contentContainer = document.getElementById( "display1");
+        contentContainer.innerHTML = '';
+        let todoHtml = '';
+        for(let i=0; i<arrayList.length;i++)
+        {
+            const todoItem = arrayList[i];
+            const {course,mark} = todoItem;
+            todoHtml += `<div> ${i+1}. ${course}  ${mark}
+            <button type="button" class = "delete-button" onclick = "arrayList.splice(${i}, 1); display();" >delete</button> </div>`;
+        }
+        let array = [];
+        for(let i=0; i<arrayList.length;i++)
+        {
+            
+            const todoItem = arrayList[i];
+            const {course,mark} = todoItem;
+            const getCourse = course + "-"+mark;
+            array.push(getCourse);
+        }
+        const arrayDataString = JSON.stringify(array);
+        const arraySent = document.getElementById('courses');
+        arraySent.value = arrayDataString;
+        contentContainer.innerHTML=todoHtml;
+    }
+    
+</script>
+<script>
+    $(function(){
+        $(".toggle").on("click",function(){
+            if($(".menu").hasClass("active")){
+                $(".menu").removeClass("active");
+                $(this).find("a").html("<ion-icon name='menu-outline'></ion-icon>");
+            }
+            else{
+                $(".menu").addClass("active");
+                $(this).find("a").html("<ion-icon name='close-outline'></ion-icon>")
+            }
+            });
+    });
+</script>
+    
+</html>
